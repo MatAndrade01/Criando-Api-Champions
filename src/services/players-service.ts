@@ -2,6 +2,7 @@ import { response } from "express";
 import { PlayerModel } from "../models/playres-model";
 import * as PlayerRepository from "../repositories/players-repository";
 import * as HttpResponse from "../utils/http-helper";
+import { StatisticsModel } from "../models/statistics-model";
 
 export const getPlayerService = async () => {    
     const data = await PlayerRepository.findAllPlayers();
@@ -51,3 +52,7 @@ export const deletePlayerService = async (id: number) => {
     response = HttpResponse.ok({message: "Deleted"});
     return response;
 };
+
+export const updatePlayerService = async (id:number, statistics:StatisticsModel) => {
+    
+}
